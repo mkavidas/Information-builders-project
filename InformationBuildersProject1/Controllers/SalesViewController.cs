@@ -130,8 +130,6 @@ namespace InformationBuildersProject1.Controllers
             // Initialization.
             List<SalesViewDetails> lst = new List<SalesViewDetails>();
 
-            try
-            {
                 // Sorting
                 switch (order)
                 {
@@ -190,12 +188,6 @@ namespace InformationBuildersProject1.Controllers
                                                                                                  : data.OrderByDescending(p => p.TIME_DATE).ToList();
                         break;
                 }
-            }
-            catch (Exception ex)
-            {
-                // info.
-                Console.Write(ex);
-            }
 
             // info.
             return lst;
