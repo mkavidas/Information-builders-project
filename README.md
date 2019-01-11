@@ -1,5 +1,5 @@
 # Information-builders-project
-Datatables integrations mvc5
+Datatables integrations ASP.NET MVC5
 
 # Install instructions:
 put wf_retail.mdf/ldf into app_data folder
