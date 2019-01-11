@@ -25,6 +25,17 @@ namespace InformationBuildersProject1
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+            // Custom. 
+            bundles.Add(new ScriptBundle("~/bundles/custom-datatable").Include(
+                                  "~/Scripts/custom-datatable.js"));
+
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/bootstrap.css",
+                      "~/Content/site.css"));
+
+            // Custom
+            bundles.Add(new StyleBundle("~/Content/css/custom-style").Include(
+                                        "~/Content/style/custom-style.css"));
         }
     }
 }
