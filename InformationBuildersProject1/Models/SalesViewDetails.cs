@@ -15,6 +15,7 @@ namespace InformationBuildersProject1.Models
         public string BRAND { get; set; }
         public string MODEL { get; set; }
         public int QUANTITY_SOLD { get; set; }
-        public double REVENUE_US { get; set; }
+        public string REVENUE_US { get; set; }
+        public double _REVENUE_US { get; set; }
     }
 }

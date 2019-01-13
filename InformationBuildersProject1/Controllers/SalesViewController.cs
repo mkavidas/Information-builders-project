@@ -34,6 +34,7 @@ namespace InformationBuildersProject1.Controllers
             while (nwReader.Read())
             {
                 DateTime cur = (DateTime)nwReader["TIME_DATE"]; //Get the time here so we can convert to string
+                decimal val = Convert.ToDecimal(nwReader["REVENUE_US"]);
                 sales.Add(new SalesViewDetails
                 {
                     TIME_DATE = cur.ToString("yyyy/MM/dd "), //Convert time to formatted string
@@ -43,7 +44,8 @@ namespace InformationBuildersProject1.Controllers
                     BRAND = (string)nwReader["BRAND"],
                     MODEL = (string)nwReader["MODEL"],
                     QUANTITY_SOLD = (int)nwReader["QUANTITY_SOLD"],
-                    REVENUE_US = Convert.ToDouble(nwReader["REVENUE_US"])
+                    REVENUE_US = val.ToString("c"),
+                    _REVENUE_US = Convert.ToDouble(nwReader["REVENUE_US"]) //store in double for easy natural sorting
                 });
             }
             nwReader.Close();
@@ -177,8 +179,8 @@ namespace InformationBuildersProject1.Controllers
 
                     case "7":
                         // Setting.
-                        lst = orderDir.Equals("DESC", StringComparison.CurrentCultureIgnoreCase) ? data.OrderBy(p => p.REVENUE_US).ToList()
-                                                                                                 : data.OrderByDescending(p => p.REVENUE_US).ToList();
+                        lst = orderDir.Equals("DESC", StringComparison.CurrentCultureIgnoreCase) ? data.OrderBy(p => p._REVENUE_US).ToList()
+                                                                                                 : data.OrderByDescending(p => p._REVENUE_US).ToList();
                         break;
 
                     default:

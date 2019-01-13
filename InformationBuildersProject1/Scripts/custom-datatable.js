@@ -4,6 +4,7 @@ $(document).ready(function () {
         ({
             "processing": true,
             "serverSide": true,
+            "scrollX": true,
             "ajax":
             {
                 "url": "/SalesView/GetData",
